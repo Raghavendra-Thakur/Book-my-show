@@ -66,7 +66,7 @@ const PlayPage = () => {
     </div>
 
 
-    <div>PlayPage</div>
+  
     </>
   )
 }

@@ -185,7 +185,7 @@ const MoviePage = () => {
       <PosterSlider config={settings} title="BMS XCLUSIVE" posters={recomendedMovies} isDark ={false}/>
     </div>
     </div>
-    <div>Moviepage</div>
+   
     </>
   
 }
