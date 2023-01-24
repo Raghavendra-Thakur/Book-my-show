@@ -4,7 +4,8 @@ import axios from "axios";
 //pages
 import HomePage from "./pages/Home.Page";
 import MoviePage from "./pages/Movie.page";
-import PlayPage from "./pages/Play.page";
+import PlaysPage from "./pages/Plays.page";
+import PlayPage from "./pages/play.page";
 
 //routes
 import { Routes, Route } from "react-router-dom";
@@ -21,7 +22,8 @@ function App() {
   return <Routes>
     <Route path="/" element={<HomePage/>}/>
     <Route path="/movie/:id" element={<MoviePage/>}/>
-    <Route path="/plays" element={<PlayPage/>}/>
+    <Route path="/plays" element={<PlaysPage/>}/>
+    <Route path="/tv/:id" element={<PlayPage/>}/>
   </Routes>
 }
 

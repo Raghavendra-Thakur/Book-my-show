@@ -8,6 +8,7 @@ import HeroCarousel from '../components/HeroCarousel/HeroCarousel.component'
 import PosterSlider from '../components/PoseterSlider/PosterSlider.component'
 
 
+
 const HomePage = () => {
   const[recomendedMovies , setrecomendedMovies] = useState([])
   const[premierMovie , setpremierMovie] = useState([])
@@ -41,6 +42,7 @@ const HomePage = () => {
   return (
    
     <>
+ 
     <HeroCarousel/>
     <div className = "container mx-auto px-4 md:px-12 my-8">
       <h1 className='text-2xl font-bold text-gray-800 sm:ml-3 ml-0 my-3'>The Best Of Entertainment</h1>

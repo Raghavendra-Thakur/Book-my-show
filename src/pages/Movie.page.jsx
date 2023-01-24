@@ -7,6 +7,7 @@ import Slider from 'react-slick';
 import {FaCcVisa , FaCcApplePay} from 'react-icons/fa'
 import PosterSlider from '../components/PoseterSlider/PosterSlider.component';
 import MovieHerocomponent from '../components/MovieHero/MovieHero.component';
+import CastComponent from '../cast/cast.component';
 
 const MoviePage = () => {
   const {id} = useParams();
@@ -47,7 +48,38 @@ const MoviePage = () => {
     }
     requestMovie()
   },[id])
-  const settingsCast={}
+  const settingsCast={
+    infinite: false,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+   
+        },
+      },
+    ],
+  }
   const settings = {
     infinite: false,
     speed: 500,
@@ -91,6 +123,7 @@ const MoviePage = () => {
         <p>{movie.overview}</p>
       </div>
     </div>
+   {/* offer */}
     <div className='my-8'>
       <hr />
     </div>
@@ -117,15 +150,37 @@ const MoviePage = () => {
         </div>
       </div>
     </div>
+    
+    <div className='my-8'>
+      <hr />
+    </div>
+   
+    {/* cast */}
+    <div className=' my-8 container'>
+    <h1 className='text-gray-800 font-bold text-2xl mb-2'>Cast</h1>
+     <Slider {...settingsCast}>
+        {cast.map((castData)=>(
+            <CastComponent
+            image={castData.profile_path}
+            castName={castData.original_name}
+            role = {castData.character}
+            />
+        ))}
+     </Slider>
+   
+    </div>
+    
     <div className='my-8'>
       <hr />
     </div>
     <div className='my-8 container'>
       <PosterSlider config={settings} title="Recomended Movies" posters={similarMovie} isDark ={false}/>
     </div>
+    
     <div className='my-8'>
       <hr />
     </div>
+    
     <div className='my-8 container'>
       <PosterSlider config={settings} title="BMS XCLUSIVE" posters={recomendedMovies} isDark ={false}/>
     </div>
